@@ -1,0 +1,150 @@
+.flex-container {
+  display: flex;
+  width: 100%;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* mat-card-content{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  } */
+
+.content1 {
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.score {
+  margin-top: .5em;
+  margin-left: 2em;
+  font-size: 1.5em
+}
+
+.fa {
+  cursor: pointer;
+  font-size: 4em;
+  color: white;
+  letter-spacing: 50px;
+  margin-left: 10px;
+}
+
+.selectedWeapon {
+  /* color: black; */
+  opacity: 0.5;
+}
+
+.backgroundColor {
+  background-color: rgb(1, 75, 88);
+  height: 100%;
+  margin: 63px;
+}
+
+@media only screen and (max-width: 770px) {
+  .backgroundColor {
+    background-color: rgb(1, 75, 88);
+    height: auto;
+    margin: auto;
+  }
+}
+
+.btn {
+  background-color: orange;
+  /* Green */
+  border: none;
+  color: black;
+  padding: 14px 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 61px 2px;
+  width: 233px;
+
+}
+
+@media only screen and (max-width: 1380px) {
+  .btn {
+    margin: 13px 2px;
+  }
+}
+
+.text {
+  color: white;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: 'FontAwesome';
+  text-align: center;
+}
+
+.text1 {
+  text-align: justify;
+  font-size: 22px;
+  margin-top: 91px;
+  font-weight: 400;
+  font-family: 'FontAwesome';
+  color: white;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 5px solid white;
+  background-color: rgb(1, 75, 88);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+}
+
+.vertical-center {
+  margin-top: 142px;
+}
+
+.border {
+  border: 3px solid white;
+  height: inherit;
+}
+
+.btn1 {
+  background-color: orange;
+  /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.position {
+  position: absolute;
+  margin-top: 90px;
+}
+
+.weapon {
+  pointer-events: none;
+}
+
+.selectButton {
+  background-color: rgb(247, 8, 8);
+  border: none;
+  color: white;
+  padding: 14px 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 61px 2px;
+  width: 233px;
+
+}

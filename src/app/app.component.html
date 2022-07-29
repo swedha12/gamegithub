@@ -1,0 +1,79 @@
+<!-- rock papaer scissor -->
+
+<div style="display: grid">
+  <div class="row" class="backgroundColor">
+
+    <div class="col-sm-4 border">
+      <div class="vertical-center text">
+        <h3 class="text"> Select play mode</h3>
+        <div><button [ngClass]="{ selectButton: activeButton === true}" class="btn" (click)="ngOnInit(1)">
+            Player vs computer
+          </button></div>
+        <div><button [ngClass]="{ selectButton: activeButton === false}" class="btn" (click)="computer( 2)">
+            Computer vs Computer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 border">
+      <div class="vertical-center text">
+        <div>
+          <button class="circle" *ngIf="timer">{{timeLeft}}</button>
+          <h2 class="text" style="padding-top: 29px;">{{changeMode}}</h2>
+          <h2 class="text" style="border-top: 3px solid orange;">Computer 2</h2>
+        </div>
+        <!-- <button mat-fab color="primary" class="score">{{ scores[0] }}</button> -->
+      </div>
+      <h3 class="text1">{{playOrComp}}</h3>
+      <div class="content2" [ngClass]="{ weapon: gameOver === false }">
+        <i (click)="pick(0)" [ngClass]="{ selectedWeapon: playerSelected === 0}" class="fa fa-hand-rock-o"></i>
+        <i (click)="pick(1)" [ngClass]="{ selectedWeapon: playerSelected === 1 }" class="fa fa-hand-paper-o"></i>
+        <i (click)="pick(2)" [ngClass]="{ selectedWeapon: playerSelected === 2 }" class="fa fa-hand-scissors-o"></i>
+      </div>
+    </div>
+
+    <div class="col-sm-4 border">
+      <div class=" vertical-center text">
+        <div *ngIf="time">
+          <p class="text">Game Over</p>
+        </div>
+        <div *ngIf="!loading && isResultShow" class="flex-container flex-center" style="flex-direction: column">
+          <div [ngSwitch]="theResult">
+            <ng-template [ngSwitchCase]="0">
+              <h1 class="text">{{winOrLose}} 're the winner! <br> <i class="fa fa-thumbs-o-up" aria-hidden="true"
+                  style="font-size:40px;"></i> </h1>
+            </ng-template>
+            <ng-template [ngSwitchCase]="1">
+              <h1 class="text">{{winOrLose}} lose <br> <i class="fa fa-thumbs-o-down" aria-hidden="true"
+                  style="font-size:40px;"></i></h1>
+            </ng-template>
+            <ng-template [ngSwitchCase]="2">
+              <h1 class="text">It's a tie <br> <i class="fa" aria-hidden="true" style="font-size:40px;"> !</i></h1>
+            </ng-template>
+            <ng-template ngSwitchDefault> </ng-template>
+          </div>
+        </div>
+
+
+        <div class="flex-container flex-center" *ngIf="loading">
+          <mat-spinner></mat-spinner>
+        </div>
+        <div style="padding-top: 29px;">
+          <button class="btn" (click)="ngOnInit(1 )">
+            Play Again
+          </button>
+          <button class="btn" (click)="onChangeMode()">
+            Change Mode
+          </button>
+        </div>
+      </div>
+      <br /><br />
+      <h3 class="text1">Computer 2</h3>
+      <div class="content2">
+        <i class="fa fa-hand-rock-o" [ngClass]="{ selectedWeapon: enemySelected === 0 }"></i>
+        <i class="fa fa-hand-paper-o" [ngClass]="{ selectedWeapon: enemySelected === 1}"></i>
+        <i class="fa fa-hand-scissors-o" [ngClass]="{ selectedWeapon: enemySelected === 2 }"></i>
+      </div>
+    </div>
+  </div>
